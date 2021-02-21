@@ -1,0 +1,144 @@
+.content{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.card-img-top{
+    height: 150px;
+}
+
+.center{
+    width: 150px;
+    margin: 40px auto; 
+}
+
+input { 
+    text-align: center; 
+}
+
+.input-group span{
+    margin-top: 5%;
+}
+
+.card-footer button{
+    background-color:rgba(16, 100, 23, 0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#66ffffff',endColorstr='#66ffffff',GradientType=0);
+
+}
+
+.AgregarBolsa{
+    text-align: center;
+}
+
+.precio{
+    font-size: large;
+
+}
+#textCriterio{
+    text-align: justify;
+}
+
+#btonAgregarbolsa{
+    margin-top: 50%;
+    margin: auto 0;
+}
+
+#btnAgregar{
+    margin-left: 50%;
+}
+
+#termino{
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #F2AF38;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,0.2);
+    text-align: -webkit-center;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.totalrecaudo{
+    box-sizing: border-box;
+    height: 300px;
+    width: 100%;
+    border: 1px solid #F2AF38;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,0.2);
+    text-align: -webkit-center;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#factura {
+    margin-top: 1%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  #factura td, #factura th {
+    border: 1px solid #F2AF38;
+    padding: 8px;
+  }
+  
+  #factura tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #factura tr:hover {background-color: #ddd;}
+  
+  #factura th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    border: 1px solid #F2AF38;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+  }
+
+  #limpiar{
+      background-color: #939e96;
+  }
+
+  
+.container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.text-center{
+    margin-top: 30px;
+    font-size:30px;
+      font-weight: bold;
+}
+
+#recuadro{
+    box-sizing: border-box;
+    height: auto;
+    border: 1px solid #F2AF38;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,0.2);
+    text-align: -webkit-center;
+    margin: auto;
+    padding: 10px;
+    margin-top: 3%;
+}
+
+.cantidad th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    border: 1px solid #F2AF38;
+    background-color: #007bff;
+    color: white;
+  }
+  .cantidad td {
+    text-align: center;
+    border: 1px solid #F2AF38;
+ }
+
+#recuadro p{
+    text-align: left;
+}

@@ -1,0 +1,58 @@
+
+<div id="recuadro">
+    <div style="text-align: right;">
+        <button type="button" class="btn btn-danger" (click)="ToListas()">X</button>
+    </div>
+    <legend class="text-center header">Datos Empleados</legend>
+    <form [formGroup]="AddEmpleado">
+        <div id="test-l" class="content">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Nombres<span id="required">*</span></label>
+                    <input name="NombreEmpleado" type="text" class="form-control" id="NombreEmpleado"
+                        formControlName="NombreEmpleado" placeholder="" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Apellidos<span id="required">*</span></label>
+                    <input name="ApellidoEmpleado" type="text" class="form-control" id="ApellidoEmpleado"
+                        formControlName="ApellidoEmpleado" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Documento de identidad<span id="required">*</span></label>
+                    <input name="DocumentoEmpleado" type="text" class="form-control" id="DocumentoEmpleado"
+                        formControlName="DocumentoEmpleado" placeholder="" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Cargo desempeña<span id="required">*</span></label>
+                    <input name="CargoEmpleado" type="text" class="form-control" id="CargoEmpleado"
+                        formControlName="CargoEmpleado" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="ContrasenaEmpleado">Contraseña<span id="required">*</span></label>
+                    <input name="ContrasenaEmpleado" type="password" class="form-control" id="ContrasenaEmpleado"
+                        formControlName="ContrasenaEmpleado" placeholder="" value="" required
+                        (blur)="validarCoincideContrasena()">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ContrasenaEmpleadoConf">Confirmar Contraseña<span id="required">*</span></label>
+                    <input name="ContrasenaEmpleadoConf" type="password" class="form-control"
+                        id="ContrasenaEmpleadoConf" formControlName="ContrasenaEmpleadoConf" placeholder="" value=""
+                        required (blur)="validarCoincideContrasena()">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="msj-info-contrasenaNoCoincide" *ngIf="!noIguales">
+                    <label>*Las Contraseñas no coinciden, vuelve a intentar !</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="fadeIn fourth" value="Registrar Empleado" [disabled]="AddEmpleado.invalid"
+                    (click)="RegistarEmpleado()">
+            </div>
+        </div>
+    </form>
+</div>

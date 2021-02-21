@@ -1,0 +1,3069 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PlanesFamiliares.Bussiness</name>
+    </assembly>
+    <members>
+        <member name="T:Bussiness.Controllers.BussinessController">
+            <summary>
+            Controlador Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.#ctor(Bussiness.Repositories.IBussinessRepository,Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Clase constructora.
+            </summary>
+            <param name="bussinessRepository"></param>
+            <param name="cache"></param>
+            <param name="cacheM"></param>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CrearParametrosOfuscados(System.String)">
+            <summary>
+             Generarcioon de datos ofuscados
+            </summary>
+            <param name="NumeroCelular"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ObtenerParametrosDesofuscados(System.String)">
+            <summary>
+            Desofusca la información enviada a la URL
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.AgregarLiderComunidadFunction(System.String,System.String,System.Double)">
+            <summary>
+            Se crea una comunidad y se agrega al Lider.
+            </summary>
+            <param name="sesion"></param>
+            <param name="nombreLineaLider"></param>
+            <param name="capacidadAsignada"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.InformacionPantallaError(System.String)">
+            <summary>
+            Se retorna la información que debe mostrar la ventana de error
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerCelularParametro(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.GuardarNombreLider(System.String,System.String)">
+            <summary>
+            Guarda en cache el nombre del lider
+            </summary>
+            <param name="sesion"></param>
+            <param name="NombreLider"></param>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.GuardarDatosIntegrante(System.String,System.String,System.String,System.Double)">
+            <summary>
+            Guarda en cache los datos del Lider
+            </summary>
+            <param name="sesion"></param>
+            <param name="NombreIntegrante"></param>
+            <param name="CelularIntegrante"></param>
+            <param name="CapacidadAsignada"></param>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerDatosIntegrante(System.String)">
+            <summary>
+            Lee el nombre del lider en cache
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.GenerarCodigoVerificacion(System.String)">
+            <summary>
+            Genera un código aleatorio para realizar una posterior verificación
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ValidarCodigoVerificacion(System.String,System.String)">
+            <summary>
+            Verifica Token  para insercion de miembro a la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="Codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarVariableSesPospago">
+            <summary>
+            Carga las variables de sesion en cache
+            </summary>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerDatosComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ResumenComunidad(System.String)">
+            <summary>
+            Obtiene los datos a mostrar en la pantalla de Resumen
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.DireccionarIngreso(System.String,System.String)">
+            <summary>
+            Redireccionar ingreso de la aplicacion
+            </summary>
+            <param name="NumeroCelular">numero de celular a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>Direccion de pantalla a presentar</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ValidacionesIniciales(System.String)">
+            <summary>
+            Validaciones que se realizan despues de desofucar el parámetro de entrada y antes de iniciar el flujo.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ValidacionesIntegrantesComunidad(System.String)">
+            <summary>
+            Realiza las validaciones correspondientes a una línea
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarCapacidad(System.String)">
+            <summary>
+            Se consulta la capacidad de una línea determinada.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerMensajesPantallaExito">
+            <summary>
+            Lee de cache los mensajes de texto para las pantallas de exito al agregar comunidad y al agregar integrante
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CompartirDatos(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar la comparticion de datos
+            </summary>
+            /// <param name="sesion"></param>
+            <param name="celularOrigen"></param>
+            <param name="celularDestino"></param>
+            <param name="gb"></param>
+            <param name="celularPadre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CambiarPlanFamiliar(System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar el cambio de plan de la linea hija
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularPadre"></param>
+            <param name="celularHijo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ResumenIntegrante(System.String)">
+            <summary>
+            Retorna la informacion del resumen de un itegrante
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ActivacionPlanFamiliar(System.String)">
+            <summary>
+            Realiza la Activacion de la comunidad  en Planes familiares
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ProcesarDistibucionGigas(System.String)">
+            <summary>
+            Pocesar la distribucion de gigas de una comunidad
+            </summary>
+            <param name="dataDistribucion">datos a distribuir</param>
+            <returns>True si pudo distribuir correctamente todos los datos</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ValidacionesSuspencionBaja(System.String,System.String)">
+            <summary>
+            Validaciones para suspender integrante cuando se va a eliminar
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si cumple con las validaciones</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerDistribucionGigas(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Leer la distribucion de gigas aplicada 
+            </summary>
+            <param name="distribucion">Cadena de distribucion</param>
+            <returns>Json con la distribucion</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerNumeroLider(System.String)">
+            <summary>
+            Lee el nombre del lider en cache
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerNombreLider(System.String)">
+            <summary>
+            Obtener datos de integrante para experiencia
+            </summary>
+            <param name="sesion">Codigo de sesion en curso</param>
+            <returns>Data de la linea </returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerDataAllComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ProcesoEliminarIntegrante(System.String,System.String)">
+            <summary>
+            Eliminar Integrante de la comunidad y enviar SMS
+            </summary>
+            <param name="numeroCelular">Numero Celular linea a eliminar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si elimino y envio correctamente el SMS</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.LeerParametro(System.String)">
+            <summary>
+            Leer parametros genericos
+            </summary>
+            <param name="llaveParametro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarMensajesPersonalizado(System.String,System.String)">
+            <summary>
+            Retorna mensaje de usuario en especifico con posibilidad de agragar texto personalizado
+            </summary>
+            <param name="codMensaje">Codigo Mensaje</param>
+            <param name="textoAdicional">Texto Adicional</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ActualizarNomIntegranteComunidad(System.String,System.String,System.String)">
+            <summary>
+            Actualizar el nombre de un intergante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a editar</param>
+            <param name="NomLinea">Nombre nuevo del integrante</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ObtenerDataExperiencia(System.String)">
+            <summary>
+            Obtener data de experiencia de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ActualizarEstadoIntegranteComunidad(System.String,System.String)">
+            <summary>
+            ActualizarEstadoIntegranteComunidad
+            </summary>
+            <param name="NumLinea"></param>
+            <param name="Estado"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ObtenerDataSoporte(System.String)">
+            <summary>
+            Obtener data de soporte de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ObtenerInformacionCompartir(System.String)">
+            <summary>
+            Obtener datos para distribucion
+            </summary>
+            <param name="numeroLinea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarEmailAbonado(System.String)">
+            <summary>
+            Consultar email abonado
+            </summary>
+            <param name="sesion">Numero de sesion</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.AddCacheParam(System.String,System.String,System.String)">
+            <summary>
+            Cargar parametros en cache
+            </summary>
+            <param name="sesion">Sesion en curso</param>
+            <param name="nomCacheParam">Nombre de parametro de cache</param>
+            <param name="valCacheParam">Valor del parametro de cache</param>
+            <returns>True si carga exitosamente parametro de cache</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarNombreCompletoIntegrante(System.String,System.String)">
+            <summary>
+            Consultar el nombre de un integrante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a editar</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultaInformacionVideo">
+            <summary>
+            Consultar Información video para PAP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultaInhabilitarInformacion(System.String)">
+            <summary>
+            Consultar si el usuario inhabilito
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CrearRegistroInhabilitarInformacion(System.String)">
+            <summary>
+            Registra inhabilitación de
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CrearRegistroLogUso(System.String)">
+            <summary>
+            Registrar uso de la opción videos PAP
+            </summary>
+            <param name="sesion">numero de linea</param>
+            <returns></returns>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings">
+            <summary>
+            Clase para manejar la configuración de la aplicación.
+            </summary>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings.Constantes">
+            <summary>
+            Manejo de constantes de la aplicación.
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Constantes.Novum_Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Constantes.Novum_IV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings.Uris">
+            <summary>
+            Manejo de las URL de los servicios
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Uris.Servicios_URI">
+            <summary>
+            URL de la API de Servicios
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Uris.DataModel_URI">
+            <summary>
+            URL de la API de Datos
+            </summary>
+        </member>
+        <member name="T:Bussiness.Program">
+            <summary>
+            Inicio de la aplicación.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Program.Main(System.String[])">
+            <summary>
+            Método inicial de la aplicación.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Bussiness.Program.BuildWebHost(System.String[])">
+            <summary>
+            Método para iniciar el host de la aplicación.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bussiness.Repositories.BussinessRepository">
+            <summary>
+            Respositorio para Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.#ctor(Microsoft.Extensions.Logging.ILogger{Bussiness.Repositories.BussinessRepository},Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Método Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="uris"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.DireccionarIngreso(System.String,System.String)">
+            <summary>
+            Determina que comportamientro tendrá la aplicación al iniciar.
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.AgregarLiderComunidad(System.String,System.String,System.Double)">
+            <summary>
+            Crear una comunidad y agrega la linea lider
+            </summary>
+            <param name="sesion"></param>
+            <param name="nombreLineaLider"></param>
+            <param name="CapacidadAsignada"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ValidacionesIntegrantesComunidad(System.String)">
+            <summary>
+            Realiza las validaciones correspondientes a una línea
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ResumenComunidad(System.String)">
+            <summary>
+            Retorna el resumen de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ValidarCodigoVerificacion(System.String,System.String)">
+            <summary>
+            Se realiza la validación del código de verificación
+            </summary>
+            <param name="sesion"></param>
+            <param name="Codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ObtenerParametrosDesofuscados(System.String)">
+            <summary>
+            Desofusca la información envida a la aplicación
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CrearParametrosOfuscados(System.String)">
+            <summary>
+            Desofusca la información envida a la aplicación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarVariableSesPospago">
+            <summary>
+            Carga las variables de sesion en cache
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.GenerarCodigoVerificacion(System.String)">
+            <summary>
+            generar codigo de verificacion
+            </summary>
+            <param name="sesion">Codigo de la sesion </param>
+            <returns>retorna el codigo de verificacion</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.LeerDataComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ValidacionesIniciales(System.String)">
+            <summary>
+            Validaciones que se realizan despues de desofucar el parámetro de entrada y antes de iniciar el flujo.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarCapacidad(System.String)">
+            <summary>
+            Se consulta la capacidad de una línea determinada.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CompartirDatos(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar la comparticion de datos
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularOrigen"></param>
+            <param name="celularDestino"></param>
+            <param name="gb"></param>
+            <param name="celularPadre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CambiarPlanFamiliarHijo(System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar el cambio de plan de la linea hija
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularPadre"></param>
+            <param name="celularHijo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.GuardarMensajesPantallaExito(System.String,System.Boolean)">
+            <summary>
+            Guarda en cache los mensajes de texto para las pantallas de exito al agregar comunidad y al agregar integrante
+            </summary>
+            <param name="sesion"></param>
+            <param name="EsPadre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ResumenIntegrante(System.String)">
+            <summary>
+            Retorna la informacion del resumen de un itegrante
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ActivacionPlanFamiliar(System.String)">
+            <summary>
+            ActivacionPlanFamiliar
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ProcesarDistibucionGigas(System.String)">
+            <summary>
+            Pocesar la distribucion de gigas de una comunidad
+            </summary>
+            <param name="dataDistribucion">datos a distribuir</param>
+            <returns>True si pudo distribuir correctamente todos los datos</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ValidacionesSuspencionBaja(System.String,System.String)">
+            <summary>
+            Validaciones para suspender integrante cuando se va a eliminar
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si cumple con las validaciones</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.LeerNombreLider(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sesion">Codigo de sesion en curso</param>
+            <returns>Retorna el nombre de la linea lider</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.LeerDataAllComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ProcesoEliminarIntegrante(System.String,System.String)">
+            <summary>
+            Eliminar Integrante de la comunidad y enviar SMS
+            </summary>
+            <param name="numeroCelular">Numero Celular linea a eliminar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si elimino y envio correctamente el SMS</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.LeerDistribucionGigas(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Convertir data para resumen de distribucion
+            </summary>
+            <param name="distribucion">Cadena de distribucion</param>
+            <returns>Array de datos</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.LeerParametro(System.String)">
+            <summary>
+            Leer parametros genericos
+            </summary>
+            <param name="llaveParametro">llave del Parametro</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarMensajesPersonalizado(System.String,System.String)">
+            <summary>
+            Retorna mensaje de usuario en especifico con posibilidad de agragar texto personalizado
+            </summary>
+            <param name="codMensaje">Codigo Mensaje</param>
+            <param name="textoAdicional">Texto Adicional</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ActualizarNomIntegranteComunidad(System.String,System.String,System.String)">
+            <summary>
+            Actualizar el nombre de un intergante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a eliminar</param>
+            <param name="NomLinea">Nombre nuevo del integrante</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ObtenerDataExperiencia(System.String)">
+            <summary>
+            Obtener data de experiencia de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ActualizarEstadoIntegranteComunidad(System.String,System.String)">
+            <summary>
+            ActualizarEstadoIntegranteComunidad
+            </summary>
+            <param name="NumLinea"></param>
+            <param name="estado"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ObtenerDataSoporte(System.String)">
+            <summary>
+            Obtener data de soporte de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ObtenerInformacionCompartir(System.String)">
+            <summary>
+            Obtener informacion del integrante para distribucion
+            </summary>
+            <param name="numeroLinea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarEmailAbonado(System.String)">
+            <summary>
+            Consultar email abonado
+            </summary>
+            <param name="sesion">Numero de sesion</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarEmailAbonadoLinea(System.String)">
+            <summary>
+            Consultar email abonado
+            </summary>
+            <param name="linea">Numero de linea</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.AddCacheParam(System.String,System.String,System.String)">
+            <summary>
+            Cargar parametros en cache
+            </summary>
+            <param name="sesion">Sesion en curso</param>
+            <param name="nomCacheParam">Nombre de parametro de cache</param>
+            <param name="valCacheParam">Valor del parametro de cache</param>
+            <returns>True si carga exitosamente parametro de cache</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarNombreCompletoIntegranteFunction(System.String,System.String)">
+            <summary>
+            Consultar el nombre completo de un integrante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a eliminar</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultaInformacionVideo">
+            <summary>
+            Consultar Información video para PAP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultaInhabilitarInformacion(System.String)">
+            <summary>
+            Consultar si el usuario inhabilito
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CrearRegistroLogUso(System.String)">
+            <summary>
+            Registrar uso de la opción videos PAP
+            </summary>
+            <param name="sesion">numero de linea</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CrearRegistroInhabilitarInformacion(System.String)">
+            <summary>
+            Registra inhabilitación de
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion">numero de linea</param>
+            <returns></returns>       
+        </member>
+        <member name="T:Bussiness.Repositories.IBussinessRepository">
+            <summary>
+            Interface Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.DireccionarIngreso(System.String,System.String)">
+            <summary>
+            Determina que comportamientro tendrá la aplicación al iniciar.
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.AgregarLiderComunidad(System.String,System.String,System.Double)">
+            <summary>
+            Crear una comunidad y agrega la linea lider
+            </summary>
+            <param name="sesion"></param>
+            <param name="nombreLineaLider"></param>
+            <param name="CapacidadAsignada"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ResumenComunidad(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ObtenerParametrosDesofuscados(System.String)">
+            <summary>
+            Desofusca la información envida a la aplicación
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CrearParametrosOfuscados(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="NumeroCelular"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ValidarCodigoVerificacion(System.String,System.String)">
+            <summary>
+            Verifica Token  para insercion de miembro a la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="Codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.GenerarCodigoVerificacion(System.String)">
+            <summary>
+            Genera un código aleatorio para realizar una posterior verificación
+            </summary>
+            <param name="sesion"></param>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarVariableSesPospago">
+            <summary>
+            Carga las variables de sesion en cache
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.LeerDataComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ValidacionesIniciales(System.String)">
+            <summary>
+            Validaciones que se realizan despues de desofucar el parámetro de entrada y antes de iniciar el flujo.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ValidacionesIntegrantesComunidad(System.String)">
+            <summary>
+            Realiza las validaciones correspondientes a una línea
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarCapacidad(System.String)">
+            <summary>
+            Se consulta la capacidad de una línea determinada.
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CompartirDatos(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar la comparticion de datos
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularOrigen"></param>
+            <param name="celularDestino"></param>
+            <param name="gb"></param>
+            <param name="celularPadre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CambiarPlanFamiliarHijo(System.String,System.String,System.String)">
+            <summary>
+            Se encarga de realizar el cambio de plan de la linea hija
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularPadre"></param>
+            <param name="celularHijo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.GuardarMensajesPantallaExito(System.String,System.Boolean)">
+            <summary>
+            Guarda en cache los mensajes de texto para las pantallas de exito al agregar comunidad y al agregar integrante
+            </summary>
+            <param name="sesion"></param>
+            <param name="EsPadre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ResumenIntegrante(System.String)">
+            <summary>
+            Retorna la informacion del resumen de un itegrante
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ActivacionPlanFamiliar(System.String)">
+            <summary>
+            ActivacionPlanFamiliar
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ProcesarDistibucionGigas(System.String)">
+            <summary>
+            Pocesar la distribucion de gigas de una comunidad
+            </summary>
+            <param name="dataDistribucion">datos a distribuir</param>
+            <returns>True si pudo distribuir correctamente todos los datos</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ValidacionesSuspencionBaja(System.String,System.String)">
+            <summary>
+            Validaciones para suspender integrante cuando se va a eliminar
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si cumple con las validaciones</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.LeerNombreLider(System.String)">
+            <summary>
+            Obtener datos de integrante para experiencia
+            </summary>
+            <param name="sesion">Numero de linea a vaidar datos</param>
+            <returns>Data de la linea </returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.LeerDataAllComunidad(System.String)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ProcesoEliminarIntegrante(System.String,System.String)">
+            <summary>
+            Eliminar Integrante de la comunidad y enviar SMS
+            </summary>
+            <param name="numeroCelular">Numero Celular linea a eliminar</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si elimino y envio correctamente el SMS</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.LeerDistribucionGigas(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Convertir data para resumen de distribucion
+            </summary>
+            <param name="distribucion">Cadena de distribucion</param>
+            <returns>Array de datos</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.LeerParametro(System.String)">
+            <summary>
+            Leer parametros genericos
+            </summary>
+            <param name="llaveParametro">llave del Parametro</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarMensajesPersonalizado(System.String,System.String)">
+            <summary>
+            Retorna mensaje de usuario en especifico con posibilidad de agragar texto personalizado
+            </summary>
+            <param name="codMensaje">Codigo Mensaje</param>
+            <param name="textoAdicional">Texto Adicional</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ActualizarNomIntegranteComunidad(System.String,System.String,System.String)">
+            <summary>
+            Actualizar el nombre de un intergante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a eliminar</param>
+            <param name="NomLinea">Nombre nuevo del integrante</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ObtenerDataExperiencia(System.String)">
+            <summary>
+            Obtener data de experiencia de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ActualizarEstadoIntegranteComunidad(System.String,System.String)">
+            <summary>
+            ActualizarEstadoIntegranteComunidad
+            </summary>
+            <param name="NumLinea"></param>
+            <param name="estado"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ObtenerDataSoporte(System.String)">
+            <summary>
+            Obtener data de soporte de comunidad
+            </summary>
+            <param name="numeroLinea">Numero de linea a validar</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ObtenerInformacionCompartir(System.String)">
+            <summary>
+            Obtener informacion del integrante para distribucion
+            </summary>
+            <param name="numeroLinea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarEmailAbonado(System.String)">
+            <summary>
+            Consultar email abonado
+            </summary>
+            <param name="sesion">Numero de sesion</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.AddCacheParam(System.String,System.String,System.String)">
+            <summary>
+            Cargar parametros en cache
+            </summary>
+            <param name="sesion">Sesion en curso</param>
+            <param name="nomCacheParam">Nombre de parametro de cache</param>
+            <param name="valCacheParam">Valor del parametro de cache</param>
+            <returns>True si carga exitosamente parametro de cache</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarNombreCompletoIntegranteFunction(System.String,System.String)">
+            <summary>
+            Consultar el nombre de un integrante de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a eliminar</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultaInformacionVideo">
+            <summary>
+            Consultar Información video para PAP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultaInhabilitarInformacion(System.String)">
+            <summary>
+            Consultar si el usuario inhabilito
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CrearRegistroLogUso(System.String)">
+            <summary>
+            Registrar uso de la opción videos PAP
+            </summary>
+            <param name="sesion">numero de linea</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CrearRegistroInhabilitarInformacion(System.String)">
+            <summary>
+            Registra inhabilitación de
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion">numero de linea</param>
+            <returns></returns>
+        </member>
+        <member name="T:Bussiness.Services.ApiVersioningService">
+            <summary>
+            Manejo de la vesión de la API.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.ApiVersioningService.AddApiVersioningService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Manejo de la vesión de la API.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.ConfigureService">
+            <summary>
+            Adicionar clases para el manejo de la configuración de la aplicación.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.ConfigureService.AddConfigureService(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adicionar clases para el manejo de la configuración de la aplicación.
+            </summary>
+            <param name="services"></param>
+            <param name="Configuration"></param>
+        </member>
+        <member name="T:Bussiness.Services.CorsService">
+            <summary>
+            Configuración de Cors.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.CorsService.AddCorsService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de Cors.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.MvcService">
+            <summary>
+            Configuración de MVC.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.MvcService.AddMvcService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de MVC.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.SingletonService">
+            <summary>
+            Configuración de los repositorios.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.SingletonService.AddSingletonService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de los repositorios.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.SwaggerGenService">
+            <summary>
+            Configuración de Swagger.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.SwaggerGenService.AddSwaggerGenService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de Swagger.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Startup">
+            <summary>
+            Clase que permite las configuraciones iniciales de la API
+            </summary>
+        </member>
+        <member name="P:Bussiness.Startup.Configuration">
+            <summary>
+            Interfaz relacionada a la configuracion de la API
+            </summary>
+        </member>
+        <member name="P:Bussiness.Startup.HostingEnvironment">
+            <summary>
+            Interfaz relacionado al entorno de la API
+            </summary>
+        </member>
+        <member name="M:Bussiness.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Método inicial enla configuración de la API
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="M:Bussiness.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            /Método para adicionar servicios al contenedor.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Bussiness.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Configuraciones adicionales de la API
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Entities.DatosComparticion">
+            <summary>
+            DatosComparticionDatos
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.celularOrigen">
+            <summary>
+            celularOrigen
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.celularDestino">
+            <summary>
+            celularDestino
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.cicloOrigen">
+            <summary>
+            cicloOrigen
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.cicloDestino">
+            <summary>
+            cicloDestino
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.cantidadGigas">
+            <summary>
+            cantidadGigas
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.cantidadBytes">
+            <summary>
+            cantidadBytes
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.bonoOrigen">
+            <summary>
+            bonoOrigen
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.bonoTempOrigen">
+            <summary>
+            bonoTempOrigen
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.bonoDestino">
+            <summary>
+            bonoDestino
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.bonoTempDestino">
+            <summary>
+            bonoTempDestino
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.idOferta">
+            <summary>
+            idOferta
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.codigoError">
+            <summary>
+            codigoError
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosComparticion.descripcion">
+            <summary>
+            descripcion
+            </summary>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Entities.DatosDistribucion">
+            <summary>
+            Entidad para hacer la distribucion de datos
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosDistribucion.numero">
+            <summary>
+            Numero de linea a la cual se le va a aplicar la distribucion
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosDistribucion.cantidad">
+            <summary>
+            Cantidad de GB a distribuir
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosDistribucion.tipo">
+            <summary>
+            tipo de ejecucion 
+            </summary>
+        </member>
+        <member name="P:PlanesFamiliares.Bussiness.Entities.DatosDistribucion.resultDist">
+            <summary>
+            tipo de ejecucion en distribucion de datos
+            </summary>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ActivacionComunidadFunction">
+            <summary>
+            Se realiza el proceso de Activacion: cambio de plan, distribucion e insercion 
+            de la comunidad en BD de Planes Familiares
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ActivacionComunidadFunction.ActivacionComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Se realiza el proceso de activación del integrante a la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ActivacionComunidadFunction.AgregarComunidadSMS(System.String,System.String,System.Int64,System.Int32,System.Boolean,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            
+            </summary>
+            <param name="NumeroCelularPadre"></param>
+            <param name="NumeroCelularHijo"></param>
+            <param name="idComunidad"></param>
+            <param name="CapacidadAsignada"></param>
+            <param name="actualizar"></param>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.AddCacheParamFuntion">
+            <summary>
+            Cargar parametros en cache
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.AddCacheParamFuntion.AddCacheParam(System.String,System.String,System.String,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Cargar parametros en cache
+            </summary>
+            <param name="sesion">Sesion en curso</param>
+            <param name="nomCacheParam">Nombre de parametro de cache</param>
+            <param name="valCacheParam">Valor del parametro de cache</param>
+            <param name="cache">Cache en sesion</param>
+            <returns>True si carga exitosamente parametro de cache</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.AgregarDetallePantallaMoraFunction">
+            <summary>
+            Carga en cache la pantalla de error por mora
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.AgregarDetallePantallaMoraFunction.AgregarDetallePantallaMora(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Carga en cache la pantalla de error por mora
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <param name="uris">URL consulta de servicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">Cache en curso</param>
+            <returns>Mensaje de pantalla de error de mora</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.AgregarLiderComunidadFunction">
+            <summary>
+            Se crea una comunidad y se agrega al Lider.
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.AgregarLiderComunidadFunction.AgregarLiderComunidad(System.String,System.String,System.Double,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Se crea una comunidad y se agrega al Lider.
+            </summary>
+            <param name="sesion"></param>
+            <param name="NombreLinea"></param>
+            <param name="CapacidadAsignada"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.CambiarPlanHijoFunction">
+            <summary>
+            Clase CambiarPlanHijaFunction
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.CambiarPlanHijoFunction.CambiarPlanHijo(System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            CambiarPlanHija
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularPadre"></param>
+            <param name="celularHijo"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.CargaVariableSesionTipolineaFunction">
+            <summary>
+            Carga las variables de sesion segun tipo de a evaluar
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.CargaVariableSesionTipolineaFunction.cargaVariableSesionTipoLinea(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            carga las variables de sesion segun tipo de a evaluar 
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="uris">Url constante de conexion a servicios y BD</param>
+            <param name="logger">Constante de aplicacion</param>
+            <param name="cache">Cache de sesion</param>
+            <param name="sesion">Representa la sesion activa del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ComparticionDatosFunction">
+            <summary>
+            Se encarga de realizar la comparticion de datos (GB)
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ComparticionDatosFunction.ComparticionDatos(System.String,System.String,System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Compartir o distribuir datos entre una linea origen y una destino
+            </summary>
+            <param name="sesion"></param>
+            <param name="celularOrigen"></param>
+            <param name="celularDestino"></param>
+            <param name="gb"></param>
+            <param name="celularPadre"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.CompartirGigasFunction">
+            <summary>
+            hace la distribucion de datos de M a N 
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.CompartirGigasFunction.CompartirGigas(System.Collections.ObjectModel.Collection{PlanesFamiliares.Bussiness.Entities.DatosDistribucion},System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Realiza la distribucion de datos de M a N para PF
+            </summary>
+            <param name="listaDistribucion">Lista de numeros de integrantes a distribuir</param>
+            <param name="sesion">Sesion en curso</param>
+            <param name="uris">Url de consumo de servicios</param>
+            <param name="logger">Logger se sesion</param>
+            <param name="cache">Cache en sesion</param>
+            <returns>True si pudo distribuir correctamente los integrantes restantes</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCapacidadLiderFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCapacidadLiderFunction.ConsultarCapacidadLider(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPortadoFunction">
+            <summary>
+            Valida si una linea tiene origen portado
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPortadoFunction.ValidaLineaPortado(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si una linea tiene origen portado
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea a validar</param>
+            <param name="uris">Url de conexion a servicios</param>
+            <param name="logger">Constante de aplicacion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ActualizarCicloAbonadoFunction">
+            <summary>
+            Actaulizar ciclo de facturacion de un abonado en AA
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ActualizarCicloAbonadoFunction.ActualizarCicloAbonado(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Actaulizar ciclo de facturacion de un abonado en AA
+            </summary>
+            <param name="NumeroCelular">Numero de linea a actualizar ciclo</param>
+            <param name="uris">Uri de consulta de servicios</param>
+            <param name="logger">Logger de ejecucion de servicios</param>
+            <returns>True si pudo actualizar el ciclo del abonado</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.CambiarPlanOfertaFunction">
+            <summary>
+            Clase CambiarPlanOfertaFunction
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.CambiarPlanOfertaFunction.CambiarPlanOferta(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consumir servicio CambiarPlanOferta
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="oferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCapacidadFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCapacidadFunction.ConsultarCapacidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCicloFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarCicloFunction.ConsultarCiclo(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarConceptoFraudeFunction">
+            <summary>
+            Busca el concepto de fraude segun criterios de busqueda
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarConceptoFraudeFunction.ConsultarConceptoFraude(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Busca el concepto de fraude segun criterios de busqueda
+            </summary>
+            <param name="numeroCelular">Numero de linea a consultar</param>
+            <param name="lstConceptosBusqueda">"(lstFraude=FRAUDE)(lstMora=MORA)(lstCartera=CARTERA)"</param>
+            <param name="uris">Uris consulta de servicios</param>
+            <param name="logger">Logger de seson</param>
+            <param name="cache">Cache en sesion</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>Nombre de concepto de busqueda</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarDatosClienteFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarDatosClienteFunction.ConsultarDatosCliente(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta los datos basicos del cliente
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarEmailAbonadoFunction">
+            <summary>
+            Consultar email abonado
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarEmailAbonadoFunction.ConsultarEmailAbonado(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Consultar email abonado por sesion
+            </summary>
+            <param name="sesion">Numero de sesion</param>
+            <param name="uris">Url de ejecucion de servicios</param>
+            <param name="logger">Logger de ejecucion</param>
+            <param name="cache">Cache de la sesion</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarEmailAbonadoFunction.ConsultarEmailAbonadoLinea(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Consultar email abonado por numero de linea
+            </summary>
+            <param name="linea">Numero de linea a validar</param>
+            <param name="uris">Url de ejecucion de servicios</param>
+            <param name="logger">Logger de ejecucion</param>
+            <param name="cache">Cache de la sesion</param>
+            <returns>Correo del abonado si lo tiene</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarEmailAbonadoFunction.RealizarBusquedaEmailAbonado(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Realizar busqueda de linea 
+            </summary>
+            <param name="sesion">Sesion en jueve</param>
+            <param name="linea">Numero de linea a buscar</param>
+            <param name="uris">URL de consulta a servicios</param>
+            <param name="logger">Logger de sesion</param>
+            <param name="cache">Cache de sesion</param>
+            <returns>Email si lo tiene</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarFechaActivacionFunction">
+            <summary>
+            Consultar la fecha de activacion de linea
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarFechaActivacionFunction.ConsultarFechaActivacion(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consultar la fecha de activacion de linea 
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarNumeroFunction">
+            <summary>
+            Consulta la información correspondiente a un número celular
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarNumeroFunction.ConsultarNumero(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta la información correspondiente a un número celular
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarQueryOrderFunction">
+            <summary>
+            ConsultarQueryOrder
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarQueryOrderFunction.ConsultarQueryOrder(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            ConsultarQueryOrder
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ConsultarScoreFunction">
+            <summary>
+            Consulta datos del score
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ConsultarScoreFunction.ConsultarScore(System.String,System.String,System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta datos del score
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="TipoIdentificacion"></param>
+            <param name="NumeroIdentificacion"></param>
+            <param name="Name"></param>
+            <param name="IssueD"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.DistribuirGigasFunction">
+            <summary>
+            DistribuirGigasFunction
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.DistribuirGigasFunction.DistribuirGigas(PlanesFamiliares.Bussiness.Entities.DatosComparticion,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Se encarga de realizar la distrubución de las Gigas en la linea origen y en la linea destino
+            </summary>
+            <param name="datos"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.EnviarMensajeTextoFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.EnviarMensajeTextoFunction.EnviarMensajeTexto(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.MigrarPlanOfertaFunction">
+            <summary>
+            Clase CambiarPlanOfertaFunction
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.MigrarPlanOfertaFunction.MigrarPlanOferta(System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consumir servicio MigrarPlanOferta Pos a Pre y Pre a Pos
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="oferta"></param>
+            <param name="emailAbonado"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ObtenerCapacidadFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ObtenerCapacidadFunction.ObtenerCapacidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ObtenerofertaComHijosFunction">
+            <summary>
+            Consulta la oferta disponible
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ObtenerofertaComHijosFunction.ObtenerofertaComHijos(System.Int64,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta la oferta disponible
+            </summary>
+            <param name="idComunidad"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ProcesarBajaFunction">
+            <summary>
+            ProcesarBajaFunction
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ProcesarBajaFunction.ProcesarBaja(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            ProcesarBaja Operacion
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.TieneBajaProgramadaFunction">
+            <summary>
+            Consulta si la línea tiene una baja programada.
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.TieneBajaProgramadaFunction.TieneBajaProgramada(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Consulta si la línea tiene una baja programada.
+            </summary>
+            <param name="NumeroCelular">Numero de la linea</param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>True si tiene una baja programada</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.TieneMigracionPosPreFunction">
+            <summary>
+            Consulta si la línea tiene una migración pos-pre
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.TieneMigracionPosPreFunction.TieneMigracionPosPre(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Consulta si la línea tiene una migración pos-pre
+            </summary>
+            <param name="NumeroCelular">Numero de linea</param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>True si tiene una migracion de este tipo</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.TieneMigracionPrePosFunction">
+            <summary>
+            Consulta si la línea tiene una migración pre-pos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.TieneMigracionPrePosFunction.TieneMigracionPrePos(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Consulta si la línea tiene una migración pre-pos
+            </summary>
+            <param name="NumeroCelular">Numero de linea</param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>True si tiene una migracion de este tipo</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaAntiguedadLineaFunction">
+            <summary>
+            Valida si la linea del cliente cumple con la antiguedad de registros
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaAntiguedadLineaFunction.ValidaAntiguedadLinea(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si la linea del cliente cumple con la antiguedad de registro
+            </summary>
+            <param name="NumeroCelular">Numero de linea </param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>False si no cumple con la antiguedad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaClienteFraudeFunction">
+            <summary>
+            Valida si un cliente esta en fraude
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaClienteFraudeFunction.ValidaClienteFraudulento(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si un cliente esta en fraude
+            </summary>
+            <param name="NumeroCelular">Numero de linea a consultar</param>
+            <param name="uris">Url consulta de servicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">Cache en curso</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si el cliente esta en mora</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaEsMismoClienteLineaPrepagoFunction">
+            <summary>
+            Valida si una linea prepago es del mismo lider de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaEsMismoClienteLineaPrepagoFunction.ValidaEsMismoClienteLineaPrepago(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si una linea prepago es del mismo lider de comunidad
+            </summary>
+            <param name="NumeroCelularPadre">De la linea lider</param>
+            <param name="NumeroCelularPrepago">Numero de celular de linea prepago</param>
+            <param name="uris">Uri de consulta de servicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <returns>True si la linea prepago pertenece al lider de comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPospagoFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPospagoFunction.ValidaLineaPospago(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si la linea es pospago
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea a validar</param>
+            <param name="uris">Url de consulta al servicio</param>
+            <param name="logger">Constante de sesion</param>
+            <returns>True si es pospago</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPrepagoFunction">
+            <summary>
+            Valida si la linea es prepago
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPrepagoFunction.ValidaLineaPrepago(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si la linea es prepago
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea a validar</param>
+            <param name="uris">Url de consulta al servicio</param>
+            <param name="logger">Constante de sesion</param>
+            <returns>True si es pospago</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPrepagoPortado">
+            <summary>
+            Validar si linea prepago cuando busca flujo de portados
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineaPrepagoPortado.ValidaLineaPrepagoPortadoFunction(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Validar si linea prepago cuando busca flujo de portados
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea a validar</param>
+            <param name="uris">URL consulta de servicios</param>
+            <param name="logger">Logger de ejecucion</param>
+            <param name="cache">Cache en sesion</param>
+            <returns>True si es una linea prepago</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineasPosPagoClienteFunction">
+            <summary>
+            Valida la cantidad de lineas pospago
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaLineasPosPagoClienteFunction.ValidaLineasPosPagoCliente(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida la cantidad de lineas pospago
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <param name="sesion">sesion en curso</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaListasNegrasCarteraFraudeFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaListasNegrasCarteraFraudeFunction.ValidaListasNegrasCarteraFraude(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidarCambioPlanProFunction">
+            <summary>
+            Valida si se tiene programado un cambio de plan
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidarCambioPlanProFunction.ValidarCambioPlanPro(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si se tiene programado un cambio de plan
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="uris">Url de consulta al servicio</param>
+            <param name="logger">Constante de sesion</param>
+            <param name="cache">cache de sesion</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>True si no tinene cambio de producto en curso</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidarListasNegrasCarteraMoraFunction">
+            <summary>
+            Consulta si una linea esta bajo el concepto de mora
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidarListasNegrasCarteraMoraFunction.ValidaListasNegrasCarteraMora(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Consulta si una linea esta bajo el concepto de mora
+            </summary>
+            <param name="NumeroCelular">Numero de linea a consultar</param>
+            <param name="uris">Url consulta de servicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">Cache en curso</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>True si el cliente esta en mora</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaTieneCambioSimFunction">
+            <summary>
+            Valida si la linea cuenta con un cambio de sim
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaTieneCambioSimFunction.ValidaTieneCambioSim(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si la linea cuenta con un cambio de sim
+            </summary>
+            <param name="NumeroCelular">Numero de linea </param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>False si no cumple con la antiguedad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaTieneCambioTitularidadFunction">
+            <summary>
+            Valida si la linea cuenta con un cambio de titularidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaTieneCambioTitularidadFunction.ValidaTieneCambioTitularidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si la linea cuenta con un cambio de titularidad
+            </summary>
+            <param name="NumeroCelular">Numero de linea </param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">Sesion en curso</param>
+            <returns>False si no cumple con la antiguedad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.Services.ValidaUsuarioAAAFunction">
+            <summary>
+            Valida si el usuario es AAA
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.Services.ValidaUsuarioAAAFunction.ValidaUsuarioAAA(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Valida si el usuario es AAA
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea</param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <param name="sesion">sesion en curso</param>
+            <returns>True si esta en estado AAA</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ConsultarOfertaPlanFamiliarFunction">
+            <summary>
+            Consulta el id de la oferta 
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ConsultarOfertaPlanFamiliarFunction.ConsultarIdOfertaPlanFamiliar(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta el id de la oferta por el numero de celular
+            consulta la oferta del numero en el servicio subscriber
+            y con esa oferta se obtiene el id de la oferta en la tabla de oferta de planes familiares
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.CrearParametrosOfuscadosFunction">
+            <summary>
+            Crear párametros ofuscados
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.CrearParametrosOfuscadosFunction.CrearParametrosOfuscados(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Crear párametros ofuscados
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarCapacidadIntegranteFunction">
+            <summary>
+            Actualiza la capacidad de un integrante de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarCapacidadIntegranteFunction.ActualizarCapacidadIntegrante(System.String,System.Int32,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Actualiza la capacidad de un integrante de comunidad
+            </summary>
+            <param name="NumLinea">Numero de linea a consultar</param>
+            <param name="capacidad">Cantidad de capacidad a modificar</param>
+            <param name="uris">Uri de consulta sevicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">cache de sesion</param>
+            <returns>True si pudo acutualizar capacidad de integrante</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarEmailIntegranteComunidadFunction">
+            <summary>
+            Actualizar email del integrante de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarEmailIntegranteComunidadFunction.ActualizarEmailIntegranteComunidad(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Actualizar email del integrante de comunidad
+            </summary>
+            <param name="sesion">Sesion en curso</param>
+            <param name="NumLinea">numero de linea a actualizar email</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de sesion</param>
+            <param name="cache">Cache de sesion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarEstadoIntegranteFunction">
+            <summary>
+            Actualiza la capacidad de un integrante de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarEstadoIntegranteFunction.ActualizarEstadoIntegrante(System.String,System.Int32,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Actualiza la capacidad de un integrante de comunidad
+            </summary>
+            <param name="NumLinea">Numero de linea a consultar</param>
+            <param name="estado">Cantidad de capacidad a modificar</param>
+            <param name="uris">Uri de consulta sevicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <returns>True si pudo acutualizar capacidad de integrante</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarNomIntegranteComunidadFunction">
+             <summary>
+            Operaciones de la tabla TbPfIntegrantesComunidad
+             </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ActualizarNomIntegranteComunidadFunction.ActualizarNomIntegranteComunidad(System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Actualizar el nombre de un intergante de la comunidad
+            </summary>
+             <param name="sesion"></param>
+            <param name="NumLinea">Numero de linea a eliminar</param>
+            <param name="NomLinea">Nombre nuevo del integrante</param>
+            <param name="uris">Uri de consulta sevicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultaInformacionVideoFunction">
+            <summary>
+            Consultar Información video para PAP
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultaInformacionVideoFunction.ConsultaInformacionVideo(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Servicio que retorna parametros de videos para reproducción
+            en la aplicación
+            </summary>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultaInhabilitarInformacionFunction">
+            <summary>
+            Consultar si el usuario inhabilito
+            información indicando la opcion para ver videos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultaInhabilitarInformacionFunction.ConsultaInhabilitarInformacion(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Servicio consulta si el usuario inhabilito 
+            información que indica videos de PAP
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache">cache</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarBonoPorCicloFunction">
+            <summary>
+            Consulta el bonbo por ciclo o corte
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarBonoPorCicloFunction.ConsultarBonoPorCiclo(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta el bonbo por ciclo o corte
+            </summary>
+            <param name="ciclo"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarEstadoDetalleLineaFunction">
+            <summary>
+            Servicio que retorna el estado y su detalle de una linea
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarEstadoDetalleLineaFunction.ConsultarEstadoLinea(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Servicio que retorna el estado y su detalle
+            </summary>
+            <param name="celular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarEstadoSuspendidoFunction">
+            <summary>
+            Consulta Plan Tarifario u Oferta de la Linea que se esta consultando
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarEstadoSuspendidoFunction.ConsultarEstadoSuspendido(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Servicio que retorna la Oferta o Plan Tarifario del numerod de celular
+            </summary>
+            <param name="celular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarIntegranteEsPadreFunction">
+            <summary>
+            Valida si la linea es padre
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarIntegranteEsPadreFunction.ConsultarIntegranteEsPadre(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si la linea es padre
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="uris">Transformada de conexion a datos</param>
+            <param name="logger">Constante de aplicacion</param>
+            <returns>True si es padre</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajePersonalizadoFunction">
+            <summary>
+            Llamado a las funcionalidades de la tabla TbPfMensajesUsuario
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajePersonalizadoFunction.ConsultarMensajesPersonalizado(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna mensaje de usuario en especifico con posibilidad de agragar texto personalizado
+            </summary>
+            <param name="codMensaje">Codigo Mensaje</param>
+            <param name="textoAdicional">Texto Adicional</param>
+            <param name="uris">Uri de consulta sevicios</param>
+            <param name="logger">Logger de aplicacion</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajesPersonalizadoFunction">
+            <summary>
+            Retorna los mensajes para mostrar en pantalla
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajesPersonalizadoFunction.ConsultarMensajesPersonalizado(System.String,System.String[],Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna los mensajes para mostrar en pantalla
+            </summary>
+            <param name="IdMensaje"></param>
+            <param name="Adicionales"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarNombreInteganteFunction">
+            <summary>
+            Consultar el primer nombre de un integrnate de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarNombreInteganteFunction.ConsultarNombreIntegante(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consultar el primer nombre de un integrnate de comunidad
+            </summary>
+            <param name="celular">Numero de integrante a validar</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <returns>Primer nombre de integrante de comunidad</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarNombreInteganteFunction.ConsultarNombreCompletoIntegante(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Consultar el primer nombre de un integrnate de comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="celular">Numero de integrante a validar</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns>Primer nombre de integrante de comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarOfertaPadreFunction">
+            <summary>
+            Consulta Plan Tarifario u Oferta de la Linea que se esta consultando en el servicio Subscribe
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarOfertaPadreFunction.ConsultarOfertaPadre(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Servicio que retorna la Oferta o Plan Tarifario con el codigo de la oferta o plan
+            </summary>
+            <param name="codOferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarOfertaPorCodigoFunction">
+            <summary>
+            Consulta los detalles de una oferta dados el código de la misma
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarOfertaPorCodigoFunction.ConsultarOfertaPorCodigo(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta los detalles de una oferta dados el código de la misma
+            </summary>
+            <param name="codOferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarPlanTarifarioLineaFunction">
+            <summary>
+            Consulta Plan Tarifario u Oferta de la Linea que se esta consultando en el servicio Subscribe
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarPlanTarifarioLineaFunction.ConsultarPlanTarifarioLinea(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Servicio que retorna la Oferta o Plan Tarifario del numerod de celular
+            </summary>
+            <param name="celular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarPlanTarifarioPFFunction">
+            <summary>
+            Consulta si existe Plan Tarifario u Oferta en Planes Familiares
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarPlanTarifarioPFFunction.ConsultarExistePlanTarifarioPF(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna true si la oferta o Plan tarifario corresponde a Planes familiares
+            </summary>
+            <param name="codOferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarSegmentoValidoFunction">
+            <summary>
+            Consulta Plan Tarifario u Oferta de la Linea que se esta consultando
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarSegmentoValidoFunction.ConsultarSegmentoValido(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Servicio que devuelve
+            </summary>
+            <param name="celular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionFunction">
+            <summary>
+            Carga las variables de sesion en cache de una linea portada
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionFunction.ConsultarVariableSesion(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Carga las variables de sesion en cache de una linea 
+            </summary>
+            <param name="uris">Constante de URL para conexion con DB</param>
+            <param name="logger">contante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPortadoFunction">
+            <summary>
+            Carga las variables de sesion en cache de una linea portada
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPortadoFunction.ConsultarVariableSesionPortado(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Carga las variables de sesion en cache de una linea portada
+            </summary>
+            <param name="uris">Constante de URL para conexion con DB</param>
+            <param name="logger">contante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPospagoFunction">
+            <summary>
+            Carga las variables de sesion en cache de una linea pospago
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPospagoFunction.ConsultarVariableSesionPospago(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Carga las variables de sesion en cache de una linea pospago
+            </summary>
+            <param name="uris">Constante de URL para conexion con DB</param>
+            <param name="logger">contante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPrepagoFunction">
+            <summary>
+            Consulta las variables de sesion 
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarVariableSesionPrepagoFunction.ConsultarVariableSesionPrepago(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Carga las variables de sesion en cache de una linea prepago
+            </summary>
+            <param name="uris">Constante de URL para conexion con DB</param>
+            <param name="logger">contante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.CrearComunidadFunction">
+            <summary>
+            Crea una comunidad agregando la línea lider
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.CrearComunidadFunction.CrearComunidad(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Crea una comunidad agregando la línea lider
+            </summary>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.CrearIntegranteComunidadFunction">
+            <summary>
+            Se agrega un integrante a la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.CrearIntegranteComunidadFunction.CrearIntegranteComunidad(System.Boolean,System.Int64,System.String,System.String,System.String,System.Int32,System.Int32,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Se agrega un integrante a la comunidad
+            </summary>
+            <param name="EsPadre"></param>
+            <param name="IdComunidad"></param>
+            <param name="IdOferta"></param>
+            <param name="NombreLinea"></param>
+            <param name="NumeroLinea"></param>
+            <param name="Ciclo"></param>
+            <param name="CapacidadAsignada"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroControlFunction">
+            <summary>
+            Crear objeto para registrar control de registro
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroControlFunction.CrearRegistroControl(System.String,System.String,System.String,PlanesFamiliares.Helper.Enumeraciones.TipoEjecucionContError,PlanesFamiliares.Helper.Enumeraciones.MomentoEjecucionContError,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Crear objeto para registrar control de registro
+            </summary>
+            <param name="num_Linea_Padre">Numero de linea padre</param>
+            <param name="num_Linea_Hijo">Numero de linea hijo</param>
+            <param name="excepcion">Excepcion de control</param>
+            <param name="tipoEjecucion"> tipo de registro en control de excepcion</param>
+            <param name="momentoEjecucion"> momento de registro en control de excepcion</param>
+            <param name="uris">Url a ejecutar servicio</param>
+            <param name="logger">Logger se sesion</param>
+            <returns>True si pudo insertar en tabla</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroInhabilitarInformacionFunction">
+            <summary>
+            Registra inhabilitación de
+            información indicando la opcion para ver videos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroInhabilitarInformacionFunction.CrearRegistroInhabilitarInformacion(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Servicio  registra inhabilitación de
+            información indicando la opcion para ver videos
+            </summary>
+            <param name="sesion">sesion</param>
+            <param name="uris">Url consulta de servicios</param>
+            <param name="logger">logger de la aplicacion</param>
+            <param name="cache">cache</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroRobotFunction">
+            <summary>
+            Crear registro de la tabla Tb_PF_Robot
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.CrearRegistroRobotFunction.CrearRegistroRobot(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Crear registro de la tabla Tb_PF_Robot
+            </summary>
+            <param name="msisdn">numero de linea</param>
+            <param name="postSale">Tipo de ejecucion</param>
+            <param name="uris">Url consulta de servicios</param>
+            <param name="logger">logger de la aplicacion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.EliminarIntegranteFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.EliminarIntegranteFunction.EliminarIntegrante(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.LeerParametroFunction">
+            <summary>
+            Leer parametros genericos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.LeerParametroFunction.LeerParametro(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Leer parametros genericos
+            </summary>
+            <param name="llaveParametro">llave del Parametro</param>
+            <param name="uris">Uri de consulta sevicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerCantidadIntegranteComunidadFunction">
+            <summary>
+            Retorna la cantidad de integrantes por comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerCantidadIntegranteComunidadFunction.ObtenerCantidadIntegranteComunidad(System.Int64,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna la cantidad de integrantes por comunudad
+            </summary>
+            <param name="idComunidad"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerComunidadFunction">
+            <summary>
+            Consulta el ID de la comunidad dada la línea padre.
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerComunidadFunction.ObtenerComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta el ID de la comunidad dada la línea padre.
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDataAllComunidadFunction">
+            <summary>
+            Retorna una lista con los integrantes de la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDataAllComunidadFunction.ObtenerDataAllComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Retorna una lista con los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDataExperienciaFunction">
+            <summary>
+            Obtener data de experiencia de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDataExperienciaFunction.ObtenerDataExperiencia(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Obtener data de experiencia de comunidad
+            </summary>
+            <param name="numeroLinea">Sesion en curso</param>
+            <param name="uris">Consulta de datos de API</param>
+            <param name="logger">Logger de aplicacion</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDataExperienciaFunction.ObtenerDataSoporte(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Obtener data de soporte de comunidad
+            </summary>
+            <param name="numeroLinea">Sesion en curso</param>
+            <param name="uris">Consulta de datos de API</param>
+            <param name="logger">Logger de aplicacion</param>
+            <returns>data de la comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDatosIntegranteFunction">
+            <summary>
+            Consulta el ID de la comunidad dada la línea padre.
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerDatosIntegranteFunction.ObtenerDatosIntegrante(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Consulta el ID de la comunidad dada la línea padre.
+            </summary>
+            <param name="NumeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerIntegrantesComunidadFunction">
+            <summary>
+            Retorna una lista con los integrantes de la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerIntegrantesComunidadFunction.ObtenerIntegrantesComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Retorna una lista con los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertaHijoPorOfertaPadreFunction">
+            <summary>
+            Clase Retorna la oferta Hija que corresponde al id de la Oferta Padre Plan tarifario corresponde a Planes familiares
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertaHijoPorOfertaPadreFunction.ObtenerOfertaHijoPorOfertaPadre(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna la oferta Hija que corresponde al id de la Oferta Padre Plan tarifario corresponde a Planes familiares
+            </summary>
+            <param name="idOfertaPadre"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertaPorIdOfertaFunction">
+            <summary>
+            Clase Retorna la oferta por el Id de la oferta
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertaPorIdOfertaFunction.ObtenerOfertaPorIdOferta(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna la oferta por el Id de la oferta
+            </summary>
+            <param name="idOferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertasVigentesFunction">
+            <summary>
+            Retorna la oferta vigente
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ObtenerOfertasVigentesFunction.ObtenerOfertasVigentes(System.Int32,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna la oferta vigente
+            </summary>
+            <param name="codOferta"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.PermitirAgregarFunction">
+            <summary>
+            determina si se puede agregar un integrante
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.PermitirAgregarFunction.PermitirAgregar(System.Int64,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            
+            </summary>
+            <param name="idComunidad">Identificador de la comunidad</param>
+            <param name="uris">Url de consulta de servicio</param>
+            <param name="logger">Contante de ejecucucion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <returns>True si se pueden agregar integrantes a comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaCantidadIntegranteComunidadFunction">
+            <summary>
+            Retorna la cantidad de integrantes que aún se pueden agregar a la comunudad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaCantidadIntegranteComunidadFunction.ValidaCantidadIntegranteComunidad(System.Int64,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna la cantidad de integrantes que aún se pueden agregar a la comunudad
+            </summary>
+            <param name="idComunidad"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaExisteMiembroFunction">
+            <summary>
+            Valida si existe en una comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaExisteMiembroFunction.ValidaExisteMiembro(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Valida si existe miembro en una comunidad
+            </summary>
+            <param name="NumeroCelular">Numero de line a validar</param>
+            <param name="uris">Constante de URL para consultas de servicio</param>
+            <param name="logger">Constante de sesion en la aplicacion</param>
+            <param name="cache">variables cargadas en cache</param>
+            <returns>True si existe en una comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaHijosComunidadFunction">
+            <summary>
+            Valida si un lider de comunidad tiene hijos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaHijosComunidadFunction.ValidaHijosComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Valida si un lider de comunidad tiene hijos 
+            </summary>
+            <param name="NumeroCelular">Numero de linea padre a validar</param>
+            <param name="uris">Url de conexion a servcio rest</param>
+            <param name="logger">Constante de aplicacion</param>
+            <returns>True si tiene hijos en la comunidad</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaLineaPortOutFunction">
+            <summary>
+            Valida si una linea esta en proceso de portOut
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ValidaLineaPortOutFunction.ValidaLineaPortOut(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Valida si una linea esta en proceso de portOut
+            </summary>
+            <param name="primaryTelephoneNumber">Numero de linea a validar</param>
+            <param name="uris">Url de conexion a servicios</param>
+            <param name="logger">Constante de aplicacion</param>
+            <param name="cache">cache de aplicacion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajeDeTextoFunction">
+            <summary>
+            Retorna los mensajes para mostrar en pantalla
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.ConsultarMensajeDeTextoFunction.ConsultarMensajeDeTexto(System.String,System.String[],Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Retorna los mensajes de texto parametrizados 
+            </summary>
+            <param name="IdMensaje"></param>
+            <param name="Adicionales"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DireccionarIngresoFunction">
+            <summary>
+            Determinar el direccionamiento de la aplicación al iniciar
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DireccionarIngresoFunction.DireccionarIngreso(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Determinar el direccionamiento de la aplicación al iniciar
+            </summary>
+            <returns>el direccionamiento de las pantallas de la aplicacion</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ErrorEjecucionServicioFunction">
+            <summary>
+            Proceso para dejar error de ejecucion de servicio en historico en registro de una linea 
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ErrorEjecucionServicioFunction.RegistrarErrorEjecucionServicio(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Proceso para dejar error de ejecucion de servicio en historico en registro de una linea 
+            </summary>
+            <param name="NumeroCelular">Numero de linea a dejar constancia</param>
+            <param name="detalleError">Detalle de error a registrar</param>
+            <param name="uris">Url de consulta de servicios</param>
+            <param name="logger">logger de aplicacion</param>
+            <param name="cache">cache en curso</param>
+            <param name="sesion">sesion en curos</param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GenerarCodigoVerificacionFunction">
+            <summary>
+            Genera un código aleatorio para realizar una posterior verificación
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarCodigoVerificacionFunction.GenerarCodigoVerificacion(System.String,Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Genera un código aleatorio para realizar una posterior verificación
+            </summary>
+            <param name="sesion"></param>
+            <param name="cache"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GenerarListaMensajesFunction">
+            <summary>
+            Genera lista de mensajes para dividir uno muy extenso
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarListaMensajesFunction.GenerarListaMensajes(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Genera lista de mensajes para dividir uno muy extenso
+            </summary>
+            <param name="mensaje"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GenerarLlaveSesionFunction">
+            <summary>
+            Genera una llave para manejar la sesion del usuario
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarLlaveSesionFunction.GenerarLlaveSesion(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Genera una llave para manejar la sesion del usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GenerarMensajeTextoFunction">
+            <summary>
+            Da formato a los mensajes para ser enviados
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarMensajeTextoFunction.GenerarMensajeTexto(System.String,PlanesFamiliares.Helper.Enumeraciones.TiposSMS,System.String[],Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Da formato a los mensajes para ser enviados
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarMensajeTextoFunction.GenerarMensaje(System.String,PlanesFamiliares.Helper.Enumeraciones.TiposSMS,System.String[],Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="Numero"></param>
+            <param name="Tipo"></param>
+            <param name="Adicionales"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GenerarMensajeUIFunction">
+            <summary>
+            Genera mensajes que se mostraran en pantalla
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GenerarMensajeUIFunction.GenerarMensajeUI(System.String,PlanesFamiliares.Helper.Enumeraciones.TipoMensaje,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,System.String,System.String[])">
+            <summary>
+            Genera mensajes que se mostraran en pantalla
+            </summary>
+            <param name="idMensaje"></param>
+            <param name="tipoMensaje"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="adicionalesMensajesUI"></param>
+            <param name="adicionalesMensajesPersonalizado"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GuardarCacheErrorFunction">
+            <summary>
+            Guardar la información en cache para que se muestre en pantalla
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GuardarCacheErrorFunction.GuardarCacheError(System.String,PlanesFamiliares.Helper.Enumeraciones.MensajesUsuario,PlanesFamiliares.Helper.Enumeraciones.MensajesUsuario,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Guardar la información en cache para que se muestre en pantalla
+            </summary>
+            <param name="sesion"></param>
+            <param name="MensajeTitulo"></param>
+            <param name="MensajeSubTitulo"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <param name="Origen"></param>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GuardarCacheErrorFunction.GuardarCacheError(System.String,PlanesFamiliares.Helper.Enumeraciones.MensajesUsuario,System.String[],PlanesFamiliares.Helper.Enumeraciones.MensajesUsuario,System.String[],Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Sobrecarga de GuardarCacheError con adicionales, no enviar Adicionales con '/' porque no la reconoce, Ejm: 2019/08/05
+            Al consumir el servicio del DataModel el reconoce ese adicionar con varios parametros
+            </summary>
+            <param name="sesion"></param>
+            <param name="MensajeTitulo"></param>
+            <param name="AdicionalesTitulo"></param>
+            <param name="MensajeSubTitulo"></param>
+            <param name="AdicionalesSubtitulo"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <param name="Origen"></param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.GuardarMensajesPantallaExitoFunction">
+            <summary>
+            Guarda en cache los mensajes de texto para las pantallas de exito al agregar comunidad y al agregar integrante
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.GuardarMensajesPantallaExitoFunction.GuardarMensajesPantallaExito(System.String,System.Boolean,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Guarda en cache los mensajes de texto para las pantallas de exito al agregar comunidad y al agregar integrante
+            </summary>
+            <param name="sesion"></param>
+            <param name="EsPadre"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.LeerDataAllComunidadFunction">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.LeerDataAllComunidadFunction.LeerDataAllComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.LeerDatosComunidadFunction">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.LeerDatosComunidadFunction.LeerDatosComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Lee la información de los integrantes de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.LeerDistribucionGigasFunction">
+            <summary>
+            Convertir data para resumen de distribucion
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.LeerDistribucionGigasFunction.LeerDistribucionGigas(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Convertir data para resumen de distribucion
+            </summary>
+            <param name="distribucion">Cadena de distribucion</param>
+            <returns>Array de datos</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.LeerNombreLiderIntegranteFunction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.LeerNombreLiderIntegranteFunction.LeerNombreLiderIntegrante(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ObtenerInformacionDistribucion">
+            <summary>
+            ObtenerInformacionDistribucion
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ObtenerInformacionDistribucion.ObtenerInformacionBonosyCiclo(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            ObtenerInformacionBonosyCiclo
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ObtenerParametrosDesofuscadosFunction">
+            <summary>
+            Desofusca los parametros de entrada
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ObtenerParametrosDesofuscadosFunction.ObtenerParametrosDesofuscados(System.String,Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris})">
+            <summary>
+            Desofusca los parametros de entrada
+            </summary>
+            <param name="data"></param>
+            <param name="cache"></param>
+            <param name="logger"></param>
+            <param name="uris"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.portedLineValidationCore">
+            <summary>
+            Nucleo de validaciones para lineas portadas
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.portedLineValidationCore.ejecutarValidacionPortado(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Nucleo de validaciones para lineas portadas
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">token de sesion</param>
+            <param name="uris">Constante de conexion a servicios</param>
+            <param name="logger">constante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+            <returns>True si cumple con todas las validaciones</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.PostpaidLineValidationCore">
+            <summary>
+            Nucleo de validaciones para lineas pospago
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.PostpaidLineValidationCore.ejecutarValidacionPospago(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Ejecutar core de validaciones para una linea pospago
+            </summary>
+            <param name="NumeroCelular">Numero de linea</param>
+            <param name="sesion">Token de sesion</param>
+            <param name="uris">Constante de conexion a servicios</param>
+            <param name="logger">Constante de aplicacion</param>
+            <param name="cache">Cache de la aplicacion</param>
+            <returns>True si la linea cumple con las validaciones</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.PrepaidLineValidationCore">
+            <summary>
+            Nucleo de validaciones para lineas prepago
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.PrepaidLineValidationCore.EjecutarValidacionPrepago(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Nucleo de validaciones para lineas prepago
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">token de sesion</param>
+            <param name="uris">Constante de conexion a servicios</param>
+            <param name="logger">constante de aplicacion</param>
+            <param name="cache">cache de la sesion</param>
+            <returns>True si cumple con todas las validaciones</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ProcesarDistibucionGigasFunction">
+            <summary>
+            Procesar la distribucion de gigas de una comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ProcesarDistibucionGigasFunction.ProcesarDistibucionGigas(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Pocesar la distribucion de gigas de una comunidad
+            </summary>
+            <param name="dataDistribucion">datos a distribuir</param>
+            <param name="uris">Url de consumo de datos</param>
+            <param name="logger">Logger de sesion</param>
+            <param name="cache">Cache en curso</param>
+            <returns>True si pudo distribuir correctamente todos los datos</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ProcesoEliminarIntegranteFunction">
+            <summary>
+            Eliminar Integrante de la comunidad y enviar SMS
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ProcesoEliminarIntegranteFunction.ProcesoEliminarIntegranteRollBack(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Eliminar Integrante de la comunidad y enviar SMS
+            </summary>
+            <param name="numeroCelular">Numero Celular linea a eliminar</param>
+            <param name="sesion">Sesion en curso</param>
+            <param name="uris">Url de consumo de datos</param>
+            <param name="logger">Logger de sesion</param>
+            <param name="cache">Cache en curso</param>
+            <returns>True si elimino y envio correctamente el SMS</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ProcesoEliminarIntegranteFunction.ProcesoEliminarIntegrante(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            ProcesoEliminarIntegranteCambio
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ResumenComunidadFunction">
+            <summary>
+            Retorna el resumen de la comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ResumenComunidadFunction.ResumenComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Retorna el resumen de la comunidad
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ResumenIntegranteFunction">
+            <summary>
+            Retorna la informacion del resumen de un itegrante
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ResumenIntegranteFunction.ResumenIntegrante(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Retorna la informacion del resumen de un itegrante
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones">
+            <summary>
+            Proceso que suspendera y rehabilitara las lineas para Planes Familia y Amigos
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.SuspensionesRehabilitacionesFunction(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param session=""></param>
+            <param uris=""></param>
+            <param logger=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.SuspensionGeneral(System.String,System.Boolean,Newtonsoft.Json.Linq.JArray,System.String,System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="Numero"></param>
+            <param name="lider"></param>
+            <param name="jObjIntegrantes"></param>
+            <param name="DetlistMora"></param>
+            <param name="DetlistRobo"></param>
+            <param name="DetlistFraude"></param>
+            <param name="DetlistAPC"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.SuspensionMora(System.String,System.Boolean,Newtonsoft.Json.Linq.JArray,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="Numero"></param>
+            <param name="lider"></param>
+            <param name="jObjIntegrantes"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.RehabilitacíonFunction(System.String,System.Boolean,Newtonsoft.Json.Linq.JArray,System.Int32,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param session=""></param>
+            <param uris=""></param>
+            <param logger=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.RehabilitacíonMoraLider(System.Boolean,Newtonsoft.Json.Linq.JArray,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="lider"></param>
+            <param name="jObjIntegrantes"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.SuspensionesRehabilitaciones.ValidarProcesoLider(System.Int32,System.String,System.Boolean,Newtonsoft.Json.Linq.JArray,System.Int64,System.String,System.String,System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            
+            </summary>
+            <param name="procLider"></param>
+            <param name="NumeroCelular"></param>
+            <param name="Rehabilita"></param>
+            <param name="jObjIntegrantes"></param>
+            <param name="idComunidad"></param>
+            <param name="DetlistMora"></param>
+            <param name="DetlistRobo"></param>
+            <param name="DetlistFraude"></param>
+            <param name="DetlistAPC"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidacionDireccionamientoPadreFunction">
+            <summary>
+            Valida y redirecciona a la pantalla que necesite el lider de comunidad
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidacionDireccionamientoPadreFunction.ValidacionDireccionamientoPadre(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,System.String,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Valida y redirecciona a la pantalla que necesite el lider de comunidad
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="uris">Url de conexion a servicios de datos</param>
+            <param name="logger">Constante de aplicacion </param>
+            <param name="sesion">Sesion de aplicacion</param>
+            <param name="cache">Cache de sesion</param>
+            <returns>La direccion de la pantalla que debe mostrar la aplicacion</returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidacionesInicialesFunction">
+            <summary>
+            Validaciones que se realizan despues de desofucar el parámetro de entrada y antes de iniciar el flujo.
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidacionesInicialesFunction.ValidacionesIniciales(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Validaciones que se realizan despues de desofucar el parámetro de entrada y antes de iniciar el flujo.
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidacionesIntegrantesComunidadFunction">
+            <summary>
+            Realiza las validaciones correspondientes a una línea
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidacionesIntegrantesComunidadFunction.ValidacionesIntegrantesComunidad(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Realiza las validaciones correspondientes a una línea
+            </summary>
+            <param name="sesion"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidacionesSuspencionBajaFunction">
+            <summary>
+            Validaciones para suspender integrante cuando se va a eliminar
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidacionesSuspencionBajaFunction.ValidacionesSuspencionBaja(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Validaciones para suspender integrante cuando se va a eliminar
+            </summary>
+            <param name="NumeroCelular">Numero de linea a validar</param>
+            <param name="sesion">Sesion en curso</param>
+            <param name="uris">Url de consulta a los servicios</param>
+            <param name="logger">Logger de aplicacion</param>
+            <param name="cache">cache de sesion</param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidarCodigoVerificacionFunction">
+            <summary>
+            Se realiza la validación del código de verificación
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidarCodigoVerificacionFunction.ValidarCodigoVerificacion(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Se realiza la validación del código de verificación
+            </summary>
+            <param name="sesion"></param>
+            <param name="Codigo"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.ValidarEstadoCambioPlanFunction">
+            <summary>
+            Se realiza el proceso de Activacion: cambio de plan, distribucion e insercion 
+            de la comunidad en BD de Planes Familiares
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.ValidarEstadoCambioPlanFunction.ValidarEstadoCambioPlan(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            ValidarEstadoCambioPlan
+            </summary>
+            <param name="numeroCelular"></param>
+            <param name="uris"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

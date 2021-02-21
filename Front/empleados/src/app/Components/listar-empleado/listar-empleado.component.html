@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <legend class="text-center header">Empleados</legend>
+        <div id="recuadro">
+            <div class="cantidad">
+                <table class="table table-borderless table-striped" id="estadis-1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id empleado</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Documento</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of EmpleadosData;" (click)="ToEditEmpleado(item.DocumentoIdentidad)">
+                            <td>{{item.IdEmpleado}}</td>
+                            <td>{{item.NombreEmpleado}}</td>
+                            <td>{{item.ApellidoEmpleado}}</td>
+                            <td>{{item.DocumentoIdentidad}}</td>
+                            <td>{{item.Cargo}}</td>
+                            <td><a><img src="../../../assets/image/Edit.svg" alt="Editar información del empleado" style="width: 31px; height: 25px;"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="text-align: center; border: 3px;">
+        <a class="nav-link active" (click)="ToAddEmpleado()">
+            <button type="button" class="btn btn-primary" (click)="ToAddEmpleado()"><img src="../../../assets/image/Add.svg" style="width: 31px; height: 25px;">Registar Empleado</button>
+        </a>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="text-align: center;">
+        <div class="col-10">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+
+<div id="recuadro">
+    <div style="text-align: right;">
+        <button type="button" class="btn btn-danger" (click)="ToListaEmpleados()">X</button>
+    </div>
+    <legend class="text-center header">Datos del empleado ( {{empleadoEditar.DocumentoIdentidad}} )</legend>
+    <form [formGroup]="EditEmpleado">
+        <div id="test-l" class="content">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Nombres<span id="required">*</span></label>
+                    <input name="NombreEmpleado" type="text" class="form-control" id="NombreEmpleado"
+                        formControlName="NombreEmpleado" placeholder="" required [(ngModel)]="empleadoEditar.NombreEmpleado">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Apellidos<span id="required">*</span></label>
+                    <input name="ApellidoEmpleado" type="text" class="form-control" id="ApellidoEmpleado"
+                        formControlName="ApellidoEmpleado" placeholder="" required [(ngModel)]="empleadoEditar.ApellidoEmpleado">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="usuario">Cargo desempeña<span id="required">*</span></label>
+                    <input name="CargoEmpleado" type="text" class="form-control" id="CargoEmpleado"
+                        formControlName="CargoEmpleado" placeholder="" required [(ngModel)]="empleadoEditar.Cargo">
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <input type="submit" class="fadeIn fourth" value="Actualizar Empleado" [disabled]="EditEmpleado.invalid"
+                    (click)="ActualizarEmpleado()">
+            </div>
+        </div>
+    </form>
+</div>

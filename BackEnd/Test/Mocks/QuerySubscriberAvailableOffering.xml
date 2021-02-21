@@ -1,0 +1,65 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <ns1:HeaderOut xmlns:ns1="http://telefonica.com/globalIntegration/header">
+      <ns1:originator>co:api:api:API</ns1:originator>
+      <ns1:destination>co:api:api:API</ns1:destination>
+      <ns1:execId>12628ff4-7e51-47a8-a5a8-df785130692a</ns1:execId>
+      <ns1:msgId>82afbb60-94ad-48fe-a0d5-2bd800197e04</ns1:msgId>
+      <ns1:timestamp>2019-05-27T11:37:42.453-05:00</ns1:timestamp>
+      <ns1:msgType>RESPONSE</ns1:msgType>
+    </ns1:HeaderOut>
+  </soapenv:Header>
+  <ns0:Body xmlns:ns3="http://bes.huawei.com/interface/order-management/v0.1" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/">
+    <ns2:querySubscriberAvailableOfferingResponse xmlns:ns2="http://telefonica.com/globalIntegration/services/QuerySubscriberAvailableOffering/v1">
+      <ns2:rspBodyQSAOItem>
+        <ns2:offeringAltAuxItem>
+          <ns2:idBundledProductOffering>3712o</ns2:idBundledProductOffering>
+          <ns2:nameProductOffering>ROAMING CHAT MTU</ns2:nameProductOffering>
+          <ns2:descriptionProductOffering>1201227</ns2:descriptionProductOffering>
+          <ns2:bundleFlagInfo>N</ns2:bundleFlagInfo>
+          <ns2:secondReqAuxFlag>N</ns2:secondReqAuxFlag>
+          <ns2:amountMoney>0</ns2:amountMoney>
+          <ns2:planProductOffering>Chatea sin costo 15MB x dia, Habla a $3.999 min saliente y $2.650 min entrante, envia SMS a $799</ns2:planProductOffering>
+          <ns2:propertyHWItem>
+            <ns2:idParameter>SHORT_NAME</ns2:idParameter>
+            <ns2:valueParameter>Roaming Chat 15MB/dia</ns2:valueParameter>
+          </ns2:propertyHWItem>
+        </ns2:offeringAltAuxItem>
+        <ns2:offeringAltAuxItem>
+          <ns2:idBundledProductOffering>2073o</ns2:idBundledProductOffering>
+          <ns2:nameProductOffering>ROAMING CHAT</ns2:nameProductOffering>
+          <ns2:descriptionProductOffering>1201227</ns2:descriptionProductOffering>
+          <ns2:bundleFlagInfo>N</ns2:bundleFlagInfo>
+          <ns2:secondReqAuxFlag>N</ns2:secondReqAuxFlag>
+          <ns2:amountMoney>0</ns2:amountMoney>
+          <ns2:planProductOffering>Chatea x $5.900 dia 40MB en paises Movistar/5MB otros países, Habla a $3.999 min saliente y $2.650 min entrante, envia SMS a $799</ns2:planProductOffering>
+          <ns2:propertyHWItem>
+            <ns2:idParameter>SHORT_NAME</ns2:idParameter>
+            <ns2:valueParameter>Roaming Chat 40MB/dia</ns2:valueParameter>
+          </ns2:propertyHWItem>
+          <ns2:propertyHWItem>
+            <ns2:idParameter>USSD_POSITION</ns2:idParameter>
+            <ns2:valueParameter>300</ns2:valueParameter>
+          </ns2:propertyHWItem>
+        </ns2:offeringAltAuxItem>
+        <ns2:offeringAltAuxItem>
+          <ns2:idBundledProductOffering>2071o</ns2:idBundledProductOffering>
+          <ns2:nameProductOffering>ROAMING NAVEGACION</ns2:nameProductOffering>
+          <ns2:descriptionProductOffering>1201227</ns2:descriptionProductOffering>
+          <ns2:bundleFlagInfo>N</ns2:bundleFlagInfo>
+          <ns2:secondReqAuxFlag>N</ns2:secondReqAuxFlag>
+          <ns2:amountMoney>0</ns2:amountMoney>
+          <ns2:planProductOffering>Navega x $24.900 dia 500MB en paises Movistar/30MB otros países, Habla a $3.999 min saliente y $2.650 min entrante, envia SMS a $799</ns2:planProductOffering>
+          <ns2:propertyHWItem>
+            <ns2:idParameter>SHORT_NAME</ns2:idParameter>
+            <ns2:valueParameter>Roaming Navegacion 500MB/dia</ns2:valueParameter>
+          </ns2:propertyHWItem>
+          <ns2:propertyHWItem>
+            <ns2:idParameter>USSD_POSITION</ns2:idParameter>
+            <ns2:valueParameter>200</ns2:valueParameter>
+          </ns2:propertyHWItem>
+        </ns2:offeringAltAuxItem>
+      </ns2:rspBodyQSAOItem>
+    </ns2:querySubscriberAvailableOfferingResponse>
+  </ns0:Body>
+</soapenv:Envelope>
