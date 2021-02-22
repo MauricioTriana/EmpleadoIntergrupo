@@ -84,3 +84,25 @@ C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd\Bussiness\obj\Debug\netcoreapp
 C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.dll
 C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.pdb
 C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.genruntimeconfig.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\appsettings.Desarrollo.json
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\libman.json
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Controllers\BussinessController.cs
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Bussiness.deps.json
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Bussiness.runtimeconfig.json
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Bussiness.runtimeconfig.dev.json
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Bussiness.dll
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Bussiness.pdb
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\PlanesFamiliares.Bussiness.xml
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Helper.dll
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\bin\Debug\netcoreapp2.2\Helper.pdb
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.csprojAssemblyReference.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.AssemblyInfoInputs.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.AssemblyInfo.cs
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.RazorAssemblyInfo.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.RazorAssemblyInfo.cs
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.RazorTargetAssemblyInfo.cache
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.csproj.CopyComplete
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.dll
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.pdb
+C:\Users\Cristian Triana\Desktop\Proyecto\BackEnd - copia\Bussiness\obj\Debug\netcoreapp2.2\Bussiness.genruntimeconfig.cache
