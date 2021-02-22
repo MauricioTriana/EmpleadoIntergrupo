@@ -1,0 +1,123 @@
+[  
+   {  
+      "id":"1",
+      "href":"https://apilab.telefonica.co/telefonica/telefonicatest/ri/prepay/v2/subscriptions/3168564454/buckets/1",
+      "name":"Recarga",
+      "description":"Recarga",
+      "bucketType":"general deposit",
+      "products":[  
+         {  
+            "id":"10199101003428771",
+            "publicId":"3168564454",
+            "productType":"mobile"
+         }
+      ],
+      "remainedAmount":{  
+         "amount":1394,
+         "units":"COP"
+      },
+      "status":"active",
+      "partyAccount":{  
+         "id":"10110111002889575",
+         "name":"ENRIQUE MEJIA QUINTERO",
+         "validFor":{  
+            "startDateTime":"2018-01-18T16:50:44-05:00"
+         },
+         "entityType":"account"
+      },
+      "relatedParty":[  
+         {  
+            "id":"10110111002808441",
+            "name":"ENRIQUE NADA MEJIA QUINTERO",
+            "role":"customer",
+            "validFor":{  
+               "startDateTime":"2018-01-18T13:39:02-05:00"
+            }
+         }
+      ],
+      "validFor":{  
+         "startDateTime":"2019-06-06T15:57:55-05:00",
+         "endDateTime":"2022-03-27T23:07:00-05:00"
+      }
+   },
+   {  
+      "id":"3",
+      "href":"https://apilab.telefonica.co/telefonica/telefonicatest/ri/prepay/v2/subscriptions/3168564454/buckets/3",
+      "name":"Adelanto Saldo",
+      "description":"Adelanto Saldo",
+      "bucketType":"additionalServices",
+      "products":[  
+         {  
+            "id":"10199101003428771",
+            "publicId":"3168564454",
+            "productType":"mobile"
+         }
+      ],
+      "remainedAmount":{  
+         "amount":0,
+         "units":"COP"
+      },
+      "status":"expired",
+      "partyAccount":{  
+         "id":"10110111002889575",
+         "name":"ENRIQUE MEJIA QUINTERO",
+         "validFor":{  
+            "startDateTime":"2018-01-18T16:50:44-05:00"
+         },
+         "entityType":"account"
+      },
+      "relatedParty":[  
+         {  
+            "id":"10110111002808441",
+            "name":"ENRIQUE NADA MEJIA QUINTERO",
+            "role":"customer",
+            "validFor":{  
+               "startDateTime":"2018-01-18T13:39:02-05:00"
+            }
+         }
+      ],
+      "validFor":{  
+         "startDateTime":"2019-06-06T15:57:55-05:00"
+      }
+   },
+   {  
+      "id":"4",
+      "href":"https://apilab.telefonica.co/telefonica/telefonicatest/ri/prepay/v2/subscriptions/3168564454/buckets/4",
+      "name":"Promo Todo Op",
+      "description":"Promo Todo Op",
+      "bucketType":"promotional",
+      "products":[  
+         {  
+            "id":"10199101003428771",
+            "publicId":"3168564454",
+            "productType":"mobile"
+         }
+      ],
+      "remainedAmount":{  
+         "amount":0,
+         "units":"COP"
+      },
+      "status":"active",
+      "partyAccount":{  
+         "id":"10110111002889575",
+         "name":"ENRIQUE MEJIA QUINTERO",
+         "validFor":{  
+            "startDateTime":"2018-01-18T16:50:44-05:00"
+         },
+         "entityType":"account"
+      },
+      "relatedParty":[  
+         {  
+            "id":"10110111002808441",
+            "name":"ENRIQUE NADA MEJIA QUINTERO",
+            "role":"customer",
+            "validFor":{  
+               "startDateTime":"2018-01-18T13:39:02-05:00"
+            }
+         }
+      ],
+      "validFor":{  
+         "startDateTime":"2019-06-06T15:57:55-05:00"
+      }
+   }
+]

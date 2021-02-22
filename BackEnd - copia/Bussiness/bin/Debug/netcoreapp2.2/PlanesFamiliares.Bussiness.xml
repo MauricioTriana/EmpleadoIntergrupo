@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bussiness</name>
+    </assembly>
+    <members>
+        <member name="T:Bussiness.Controllers.BussinessController">
+            <summary>
+            Controlador Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.#ctor(Bussiness.Repositories.IBussinessRepository,Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Clase constructora.
+            </summary>
+            <param name="bussinessRepository"></param>
+            <param name="cache"></param>
+            <param name="cacheM"></param>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ConsultarDatosEmpleado(System.String)">
+            <summary>
+            consulta la profesion de un empleado
+            </summary>
+            <param name="cedula">numero de cedula del empleado</param>
+            <returns>la profesion del empleado</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ListarEmpleados">
+            <summary>
+            Empleados a consultar
+            </summary>
+            <returns>Empleados a consultar</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.CrearEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            registrar asociacion
+            </summary>
+            <param name="newEmpleado">Registro a ingresar</param>
+            <returns>mensaje con resultado de la operacion</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.ActualizarEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Actualizar un empleado en BD
+            </summary>
+            <param name="updEmpleado">Objeto de empleado a actualizar</param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:Bussiness.Controllers.BussinessController.validarLoginEmpleadoAction(System.String,System.String)">
+            <summary>
+            Validar login del empleado
+            </summary>
+            <param name="identificacion">identificacion del empleado</param>
+            <param name="contrasena">Contraseña del empleado</param>
+            <returns>OK si cumple con la validacion de la contraseña</returns>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings">
+            <summary>
+            Clase para manejar la configuración de la aplicación.
+            </summary>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings.Constantes">
+            <summary>
+            Manejo de constantes de la aplicación.
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Constantes.Novum_Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Constantes.Novum_IV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Bussiness.Entities.Appsettings.Uris">
+            <summary>
+            Manejo de las URL de los servicios
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Uris.Servicios_URI">
+            <summary>
+            URL de la API de Servicios
+            </summary>
+        </member>
+        <member name="P:Bussiness.Entities.Appsettings.Uris.DataModel_URI">
+            <summary>
+            URL de la API de Datos
+            </summary>
+        </member>
+        <member name="T:Bussiness.EntityFramework.Empleado">
+            <summary>
+            Caracteristicas del objeto empleado
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.IdEmpleado">
+            <summary>
+            Id unico de empleado
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.NombreEmpleado">
+            <summary>
+            Nombre del empleado
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.ApellidoEmpleado">
+            <summary>
+            Apellidos del empleado
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.DocumentoIdentidad">
+            <summary>
+            Documento de identidad del empleado
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.Cargo">
+            <summary>
+            Cargo que desempeña el empleado en la comunidad
+            </summary>
+        </member>
+        <member name="P:Bussiness.EntityFramework.Empleado.contrasena">
+            <summary>
+            Contraseña del empleado
+            </summary>
+        </member>
+        <member name="T:Bussiness.Program">
+            <summary>
+            Inicio de la aplicación.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Program.Main(System.String[])">
+            <summary>
+            Método inicial de la aplicación.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Bussiness.Program.BuildWebHost(System.String[])">
+            <summary>
+            Método para iniciar el host de la aplicación.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bussiness.Repositories.BussinessRepository">
+            <summary>
+            Respositorio para Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.#ctor(Microsoft.Extensions.Logging.ILogger{Bussiness.Repositories.BussinessRepository},Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Método Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="uris"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ConsultarDatosEmpleado(System.String)">
+            <summary>
+            Consultar el nombre completo de un integrante de la comunidad
+            </summary>
+            <param name="cedula">empleado a consultar</param>
+            <returns>Empleado a consultar</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ListarEmpleados">
+            <summary>
+            Consultar todos empleados registrados
+            </summary>
+            <returns>Empleados a consultar</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.CrearEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Insertar un empleado en BD
+            </summary>
+            <param name="newEmpleado">Objeto de empleado</param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.ActualizarEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Actualizar un empleado en BD
+            </summary>
+            <param name="updEmpleado">Objeto de empleado a actualizar</param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.BussinessRepository.validarLoginEmpleado(System.String,System.String)">
+            <summary>
+            Validar login del empleado
+            </summary>
+            <param name="identificacion">identificacion del empleado</param>
+            <param name="contrasena">Contraseña del empleado</param>
+            <returns>OK si cumple con la validacion de la contraseña</returns>
+        </member>
+        <member name="T:Bussiness.Repositories.IBussinessRepository">
+            <summary>
+            Interface Bussiness
+            </summary>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ConsultarDatosEmpleado(System.String)">
+            <summary>
+            Consultar la profesion de un empleado
+            </summary>  
+            <param name="cedula">Numero de cedula empleado</param>
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ListarEmpleados">
+            <summary>
+            Consultar la profesion de un empleado
+            </summary>  
+            <returns>Mensaje de ejecucion correcta</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.CrearEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            insertar un empleado en BD
+            </summary>
+            <param name="newEmpleado">Objeto de empleado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.ActualizarEmpleado(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Actualizar un empleado en BD
+            </summary>
+            <param name="updEmpleado">Objeto de empleado a actualizar</param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:Bussiness.Repositories.IBussinessRepository.validarLoginEmpleado(System.String,System.String)">
+            <summary>
+            Validar login del empleado
+            </summary>
+            <param name="identificacion">identificacion del empleado</param>
+            <param name="contrasena">Contraseña del empleado</param>
+            <returns>OK si cumple con la validacion de la contraseña</returns>
+        </member>
+        <member name="T:Bussiness.Services.ApiVersioningService">
+            <summary>
+            Manejo de la vesión de la API.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.ApiVersioningService.AddApiVersioningService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Manejo de la vesión de la API.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.ConfigureService">
+            <summary>
+            Adicionar clases para el manejo de la configuración de la aplicación.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.ConfigureService.AddConfigureService(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adicionar clases para el manejo de la configuración de la aplicación.
+            </summary>
+            <param name="services"></param>
+            <param name="Configuration"></param>
+        </member>
+        <member name="T:Bussiness.Services.CorsService">
+            <summary>
+            Configuración de Cors.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.CorsService.AddCorsService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de Cors.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.MvcService">
+            <summary>
+            Configuración de MVC.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.MvcService.AddMvcService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de MVC.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.SingletonService">
+            <summary>
+            Configuración de los repositorios.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.SingletonService.AddSingletonService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de los repositorios.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Services.SwaggerGenService">
+            <summary>
+            Configuración de Swagger.
+            </summary>
+        </member>
+        <member name="M:Bussiness.Services.SwaggerGenService.AddSwaggerGenService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración de Swagger.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Bussiness.Startup">
+            <summary>
+            Clase que permite las configuraciones iniciales de la API
+            </summary>
+        </member>
+        <member name="P:Bussiness.Startup.Configuration">
+            <summary>
+            Interfaz relacionada a la configuracion de la API
+            </summary>
+        </member>
+        <member name="P:Bussiness.Startup.HostingEnvironment">
+            <summary>
+            Interfaz relacionado al entorno de la API
+            </summary>
+        </member>
+        <member name="M:Bussiness.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Método inicial enla configuración de la API
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="M:Bussiness.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            /Método para adicionar servicios al contenedor.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Bussiness.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Configuraciones adicionales de la API
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="T:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations">
+            <summary>
+            Operaciones empleado
+            </summary>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations.ConsultarDatosEmpleado(System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Empleados a consultar
+            </summary>
+            <param name="cedula">Numero de empleado a validar</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns>Empleados a consultar</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations.ListarEmpleadosAction(Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Consultar todos empleados registrados
+            </summary>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns>Empleados a consultar</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations.CrearEmpleadoAction(Newtonsoft.Json.Linq.JObject,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Crear un nuevo empleado en BD
+            </summary>
+            <param name="newEmpleado">Objeto de empleado a regsitrar</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations.ActualizarEmpleadoAction(Newtonsoft.Json.Linq.JObject,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Actualizar un empleado en BD
+            </summary>
+            <param name="updEmpleado">Objeto de empleado a actualizar</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns>mensaje de ejecucion</returns>
+        </member>
+        <member name="M:PlanesFamiliares.Bussiness.Helper.DataModel.empleadoOperations.validarLoginEmpleadoAction(System.String,System.String,Microsoft.Extensions.Options.IOptions{Bussiness.Entities.Appsettings.Uris},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Validar login del empleado
+            </summary>
+            <param name="identificacion">identificacion del empleado</param>
+            <param name="contrasena">Contraseña del empleado</param>
+            <param name="uris">Url consumo de servicios</param>
+            <param name="logger">Logger de aplicacion </param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

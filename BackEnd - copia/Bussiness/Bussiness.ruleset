@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Novum ICGlobal_C#" ToolsVersion="15.0">
+  <Include Path="..\.sonarlint\novum_testcsharp.ruleset" Action="Default" />
+</RuleSet>
